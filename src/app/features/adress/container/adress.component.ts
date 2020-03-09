@@ -1,14 +1,15 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { AdressService } from '../services/adress.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-adress',
     templateUrl: './adress.component.html',
     styleUrls: ['./adress.component.scss']
 })
-export class AdressComponent implements OnInit, AfterViewInit {
+export class AdressComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    states: [];
+    states: [] = [];
 
     constructor(
         private domicilioService: AdressService
@@ -27,5 +28,11 @@ export class AdressComponent implements OnInit, AfterViewInit {
                 this.states = response.provincias;
             }
         });
+    }
+
+    ngOnDestroy() {
+        if(this.loadStatusUnsuscribe) {
+            this.loadStatusUnsuscribe.unsubscribe();
+        }
     }
 }

@@ -2,14 +2,14 @@
     <form action="">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <select name="provincia" id="select-provincia" class="form-control">
+                <select name="provincia" id="select-provincia">
                     <option value="">Seleccione provincia</option>
                     <option *ngFor="let item of states" value="item.id">
                         {{item.nombre}}
                     </option>
                 </select>
 
-                <select name="" id="">
+                <select name="localidad" id="select-localidad">
                     <option value="">Seleccione localidad</option>
                 </select>
             </div>

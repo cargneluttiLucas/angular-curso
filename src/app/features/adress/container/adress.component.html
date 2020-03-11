@@ -1,12 +1,31 @@
-<<<<<<< HEAD
-=======
 <div class="container-adress">
-    <label>Calle</label>
-    <input type="text">
-    <label>Numero</label>
-    <input type="text">
-    <div class="container-adress__button">
-        <app-button [text]="'Guardar'" (clickButton)="saveAdress()"></app-button>
-    </div>
+    <form action="">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <select name="provincia" id="select-provincia" class="form-control">
+                    <option value="">Seleccione provincia</option>
+                    <option *ngFor="let item of states" value="item.id">
+                        {{item.nombre}}
+                    </option>
+                </select>
+
+                <select name="" id="">
+                    <option value="">Seleccione localidad</option>
+                </select>
+            </div>
+        </div>
+
+        <label>Calle</label>
+        <input type="text">
+
+        <label>Numero</label>
+        <input type="text">
+
+        <label>Entre calles</label>
+        <input type="text">
+
+        <div class="container-adress__button">
+            <app-button [text]="'Guardar'" (clickButton)="saveAdress()"></app-button>
+        </div>
+    </form>  
 </div>
->>>>>>> c40b4db061b9fe184dc424038c24846d4ada120b

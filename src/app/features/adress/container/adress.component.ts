@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-=======
 import { Component, OnInit, AfterViewInit, AfterContentInit, OnDestroy } from '@angular/core';
->>>>>>> c40b4db061b9fe184dc424038c24846d4ada120b
 import { AdressService } from '../services/adress.service';
 import { Subscription } from 'rxjs';
 
@@ -14,11 +10,8 @@ import { Subscription } from 'rxjs';
 export class AdressComponent implements OnInit, AfterViewInit, OnDestroy {
 
     states: [] = [];
-<<<<<<< HEAD
-=======
 
     loadStatesUnsuscribe: Subscription;
->>>>>>> c40b4db061b9fe184dc424038c24846d4ada120b
 
     constructor(
         private domicilioService: AdressService
@@ -49,12 +42,6 @@ export class AdressComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnDestroy() {
         if (this.loadStatesUnsuscribe) {
             this.loadStatesUnsuscribe.unsubscribe();
-        }
-    }
-
-    ngOnDestroy() {
-        if(this.loadStatusUnsuscribe) {
-            this.loadStatusUnsuscribe.unsubscribe();
         }
     }
 }

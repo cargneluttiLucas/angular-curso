@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactsService } from '../services/contacts.service';
+import { Contact } from '../models/contact.model';
 
 @Component({
   selector: 'app-contacts-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-  constructor() { }
+  public contacts: Contact[] = [];
+
+  constructor(public contactService: ContactsService) { }
 
   ngOnInit(): void {
+    // obtenemos todos los contactos
+    this.contacts = this.contactService.getContacts();
   }
 
+  // obtengo el click de la card individual.
+  onContacSelected(idContact: number): void {
+    this.contactService.selectContactById(idContact);
+  }
 }

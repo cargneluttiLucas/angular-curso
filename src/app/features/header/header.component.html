@@ -1,4 +1,4 @@
-<div class="container">
+<div #nav class="container" [@homeState]="showHeader ? 'hide': 'show'">
     <h1>{{ titleService.title$ | async }}</h1>
 
     <div class="buttons">

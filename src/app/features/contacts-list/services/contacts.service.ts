@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Contact, PhoneType } from '../models/contact.model';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -10,8 +11,8 @@ export class ContactsService {
     constructor() { }
 
 
-    getContacts() {
-        return [
+    getContacts(): Observable<Contact[]> {
+        return of([
             new Contact(1, 'albert', 'assets/default-user.png', [
                 {type: PhoneType.work, number: 93200621621 },
                 {type: PhoneType.home, number: 93444001100 },
@@ -45,7 +46,7 @@ export class ContactsService {
             new Contact(9, 'Federico', 'assets/default-user.png', [
                 {type: PhoneType.mobile, number: 939876655 },
             ], 'fede@email.com', 'Arago 356, 08032, BNC' ),
-        ];
+        ]);
     }
 
 }

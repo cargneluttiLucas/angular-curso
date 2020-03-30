@@ -73,6 +73,7 @@ export class AdressComponent implements OnInit, OnDestroy {
             .pipe(select(fromSelectorAdress.selectDataState))
             .pipe(filter(val => !!val))
             .subscribe((data: any) => {
+                console.log('data=', data);
                 this.states = data.provincias;
             });
     }

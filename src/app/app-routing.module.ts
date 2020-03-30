@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    data: { title: 'List Clients' },
+    data: { title: 'Clients List' },
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   {

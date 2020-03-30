@@ -12,7 +12,7 @@ export class ContactsService {
 
     getContacts() {
         return [
-            new Contact(1, 'albert', 'assets/default-user.png', [
+            new Contact(1, 'Albert', 'assets/default-user.png', [
                 {type: PhoneType.work, number: 93200621621 },
                 {type: PhoneType.home, number: 93444001100 },
                 {type: PhoneType.home, number: 629304050 }
@@ -20,7 +20,7 @@ export class ContactsService {
             new Contact(2, 'Daniel', 'assets/default-user.png', [
                 { type: PhoneType.mobile, number: 111223344 }
             ] ),
-            new Contact(3, 'lucas', 'assets/default-user.png', [
+            new Contact(3, 'Lucas', 'assets/default-user.png', [
                 {type: PhoneType.home, number: 123456789 },
                 {type: PhoneType.mobile, number: 111111122 }
             ], 'lucas@email.com', 'Raval 7, 08020, Barcelona' ),

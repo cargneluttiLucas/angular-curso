@@ -1,10 +1,10 @@
-<div class="contact">
+<div class="contact" *ngFor="let contact of contacts">
     <img class="contact-image" src="assets/default-user.png">
     <div class="contact-detail">
-      <h1 class="contact-detail-name">Fer</h1>
+      <h1 class="contact-detail-name">{{contact.name}}</h1>
       <p class="contact-detail-phone">
-        <span class="contact-detail-phone-type">(work) - </span>
-        <span class="contact-detail-phone-number">345345345</span>
+        <span class="contact-detail-phone-type">{{contact.phones[0].type}} - </span>
+        <span class="contact-detail-phone-number">{{contact.phones[0].number}}</span>
       </p>
     </div>
 </div>

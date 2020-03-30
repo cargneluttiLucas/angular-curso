@@ -1,3 +1,4 @@
-<p>lista de contactos</p>
-
-<app-contact></app-contact>
+<h1>Contacts</h1>
+<div *ngFor="let c of contacts">
+  <app-contact [contact]="c" ></app-contact>
+</div>

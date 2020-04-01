@@ -1,1 +1,7 @@
-<p>contact-detail works!</p>
+
+<app-contact *ngIf="contactService.selectedContact"
+    [expanded]="true"
+    [appHighlight]="true"
+    [color]="'#FEC1A6'"
+    [contact]="contactService.selectedContact">
+</app-contact>

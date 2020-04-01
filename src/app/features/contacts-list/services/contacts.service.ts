@@ -9,6 +9,16 @@ export class ContactsService {
     public selectedContact: Contact = null;
     constructor() { }
 
+    selectContactById(idContact: number) {
+        // esto quiere decir que el conacto ya esta seleccionado. Lo pasamos a null
+        if (this.selectedContact && this.selectedContact.id === idContact) {
+            this.selectedContact = null;
+        } else {
+            // obtener el contacto
+            this.selectedContact = this.getContacts()
+                .find(item => item.id === idContact);
+        }
+    }
 
     getContacts() {
         return [
@@ -24,7 +34,7 @@ export class ContactsService {
                 {type: PhoneType.home, number: 123456789 },
                 {type: PhoneType.mobile, number: 111111122 }
             ], 'lucas@email.com', 'Raval 7, 08020, Barcelona' ),
-            new Contact(4, 'Martin', 'assets/default-user.png', [
+            new Contact(4, 'martin', 'assets/default-user.png', [
                 {type: PhoneType.work, number: 222334455 },
                 {type: PhoneType.mobile, number: 222222222 }
             ], 'martin@email.com', 'Boquería 12, 08021, Barcelona' ),

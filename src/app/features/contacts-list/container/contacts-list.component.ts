@@ -9,16 +9,17 @@ import { Contact } from '../models/contact.model';
 })
 export class ContactsListComponent implements OnInit {
 
-  contacts: Contact[] = [];
+  public contacts: Contact[] = [];
 
-  constructor(private contactsService: ContactsService) { }
+  constructor(public contactService: ContactsService) { }
 
   ngOnInit(): void {
-    this.getContacts();
+    // obtenemos todos los contactos
+    this.contacts = this.contactService.getContacts();
   }
 
-  getContacts() {
-    this.contacts = this.contactsService.getContacts();
-   }
-
+  // obtengo el click de la card individual.
+  onContacSelected(idContact: number): void {
+    this.contactService.selectContactById(idContact);
+  }
 }
